@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Page-1" id="5z9qOqywwCA80-FcHPdr">
+    <mxGraphModel dx="878" dy="613" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zaSsUVJOCB6Sra8O_OCD-1" value="Landing/Login Page&lt;div&gt;- Create account&lt;/div&gt;&lt;div&gt;- Login account&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="73" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zaSsUVJOCB6Sra8O_OCD-2" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;User Starting Page&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- List of projects&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Links to feeds&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zaSsUVJOCB6Sra8O_OCD-3" value="Project Page&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Contains dashboard&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Link to Block Builder&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- List of feeds?&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="220" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zaSsUVJOCB6Sra8O_OCD-4" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Block Builder&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Standardized form&lt;/div&gt;&lt;div&gt;- Pictures of available blocks&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Feed(s)&lt;/div&gt;&lt;div&gt;- MAx/min values&lt;/div&gt;&lt;div&gt;- Units&lt;/div&gt;&lt;div&gt;- Irrelevent fields grayed out&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="295" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="zaSsUVJOCB6Sra8O_OCD-5" value="Feeds&lt;div&gt;- Create feeds&lt;/div&gt;&lt;div&gt;- Edit feeds&lt;/div&gt;&lt;div&gt;- See current value of feeds&lt;/div&gt;&lt;div&gt;- Review historical data&lt;/div&gt;&lt;div&gt;- Delete feeds&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="220" width="170" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

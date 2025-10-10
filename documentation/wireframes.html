@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Bootcamp Wireframes</title>
+  <style src="./wireframes.css"></style>
+</head>
+<body>
+<div class="container">
+  <h1>IoT Bootcamp Platform - Low-Fidelity Wireframes</h1>
+
+  <!-- Screen 1: Login -->
+  <div class="wireframe-grid">
+    <div class="wireframe">
+      <div class="wireframe-title">1. Login Screen</div>
+      <div style="padding: 60px 40px; text-align: center;">
+        <div class="gray-box" style="margin: 0 auto 30px; max-width: 200px; height: 80px; line-height: 80px; font-size: 24px;">
+          [LOGO]
+        </div>
+        <h2 style="margin-bottom: 20px;">IoT Bootcamp Platform</h2>
+        <p style="margin-bottom: 40px; color: #666;">Manage your IoT projects and devices</p>
+        <div class="button" style="padding: 15px 40px; font-size: 16px;">
+          [G] Sign in with Google
+        </div>
+        <p style="margin-top: 30px; font-size: 12px; color: #999;">
+          Use your school Google account to login
+        </p>
+      </div>
+    </div>
+
+    <!-- Screen 2: Main Dashboard -->
+    <div class="wireframe">
+      <div class="wireframe-title">2. Main Dashboard (After Login)</div>
+      <div class="nav">
+        <div style="font-weight: bold;">IoT Bootcamp</div>
+        <div class="nav-links">
+          <div>Dashboard</div>
+          <div>Projects</div>
+          <div>Feeds</div>
+          <div>Devices</div>
+          <div>Settings</div>
+          <div>[User Photo]</div>
+        </div>
+      </div>
+
+      <h2 style="margin-bottom: 15px;">Welcome, Alice!</h2>
+
+      <div class="grid-3" style="margin-bottom: 20px;">
+        <div class="box" style="text-align: center;">
+          <div style="font-size: 32px; font-weight: bold;">3</div>
+          <div>Active Projects</div>
+        </div>
+        <div class="box" style="text-align: center;">
+          <div style="font-size: 32px; font-weight: bold;">12</div>
+          <div>Feeds</div>
+        </div>
+        <div class="box" style="text-align: center;">
+          <div style="font-size: 32px; font-weight: bold;">2</div>
+          <div>Connected Devices</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-header">Recent Projects</div>
+        <table class="table">
+          <tr>
+            <th>Project Name</th>
+            <th>Feeds</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <td>Home Monitor</td>
+            <td>5</td>
+            <td><span class="status-indicator status-online"></span>Online</td>
+            <td><span class="button" style="padding: 4px 12px;">View</span></td>
+          </tr>
+          <tr>
+            <td>Weather Station</td>
+            <td>4</td>
+            <td><span class="status-indicator status-online"></span>Online</td>
+            <td><span class="button" style="padding: 4px 12px;">View</span></td>
+          </tr>
+          <tr>
+            <td>Smart Garden</td>
+            <td>3</td>
+            <td><span class="status-indicator status-offline"></span>Offline</td>
+            <td><span class="button" style="padding: 4px 12px;">View</span></td>
+          </tr>
+        </table>
+        <div class="button">+ New Project</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Project Detail View -->
+  <div class="wireframe-grid">
+    <div class="wireframe">
+      <div class="wireframe-title">3. Project Detail View</div>
+      <div class="nav">
+        <div style="font-weight: bold;">IoT Bootcamp</div>
+        <div class="nav-links">
+          <div>Dashboard</div>
+          <div>Projects</div>
+          <div>Feeds</div>
+          <div>Devices</div>
+          <div>Settings</div>
+          <div>[User Photo]</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div>
+          <h2>Home Monitor Project</h2>
+          <p style="color: #666;">Created: Oct 1, 2025</p>
+        </div>
+        <div>
+          <span class="button">Edit Project</span>
+          <span class="button">Delete</span>
+        </div>
+      </div>
+
+      <div class="box" style="margin-bottom: 15px;">
+        <div class="box-header">Project Description</div>
+        <p>Monitor temperature, humidity, and air quality in my apartment. Control LED indicators.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="box">
+          <div class="box-header">Feeds (5)</div>
+          <table class="table">
+            <tr>
+              <th>Feed Name</th>
+              <th>Current Value</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>72.5°F</td>
+              <td><span class="status-indicator status-online"></span></td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td>45%</td>
+              <td><span class="status-indicator status-online"></span></td>
+            </tr>
+            <tr>
+              <td>Air Quality</td>
+              <td>Good</td>
+              <td><span class="status-indicator status-online"></span></td>
+            </tr>
+            <tr>
+              <td>LED Status</td>
+              <td>ON</td>
+              <td><span class="status-indicator status-online"></span></td>
+            </tr>
+            <tr>
+              <td>Motion</td>
+              <td>Detected</td>
+              <td><span class="status-indicator status-online"></span></td>
+            </tr>
+          </table>
+          <div class="button">+ Add Feed</div>
+        </div>
+
+        <div class="box">
+          <div class="box-header">Dashboards (2)</div>
+          <div class="gray-box" style="height: 120px; margin: 10px 0; line-height: 120px;">
+            [Dashboard Preview Thumbnail]<br/>
+            Main Dashboard
+          </div>
+          <div class="gray-box" style="height: 120px; margin: 10px 0; line-height: 120px;">
+            [Dashboard Preview Thumbnail]<br/>
+            Mobile View
+          </div>
+          <div class="button">+ New Dashboard</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 4: Dashboard Builder -->
+    <div class="wireframe">
+      <div class="wireframe-title">4. Dashboard Builder/Viewer</div>
+      <div class="nav">
+        <div style="font-weight: bold;">IoT Bootcamp</div>
+        <div class="nav-links">
+          <div>Dashboard</div>
+          <div>Projects</div>
+          <div>Feeds</div>
+          <div>Devices</div>
+          <div>Settings</div>
+          <div>[User Photo]</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2>Main Dashboard - Home Monitor</h2>
+        <div>
+          <span class="button">Edit Mode</span>
+          <span class="button">+ Add Widget</span>
+        </div>
+      </div>
+
+      <div class="grid-2" style="gap: 15px;">
+        <!-- Temperature Chart Widget -->
+        <div class="box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div class="box-header">Temperature (Last 24h)</div>
+            <div style="font-size: 12px; color: #666;">[⋮]</div>
+          </div>
+          <div class="chart-placeholder">
+            <span style="color: #999; z-index: 1;">Line Chart</span>
+          </div>
+          <div style="text-align: center; margin-top: 10px; font-size: 24px; font-weight: bold;">
+            72.5°F
+          </div>
+        </div>
+
+        <!-- Humidity Gauge Widget -->
+        <div class="box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div class="box-header">Humidity</div>
+            <div style="font-size: 12px; color: #666;">[⋮]</div>
+          </div>
+          <div style="height: 200px; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div style="width: 150px; height: 150px; border: 4px solid #999; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+              <div style="font-size: 36px; font-weight: bold;">45%</div>
+              <div style="font-size: 12px; color: #666;">Humidity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LED Control Widget -->
+        <div class="box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div class="box-header">LED Control</div>
+            <div style="font-size: 12px; color: #666;">[⋮]</div>
+          </div>
+          <div style="padding: 40px; text-align: center;">
+            <div style="margin-bottom: 20px; font-size: 18px;">Current Status: <strong>ON</strong></div>
+            <div class="button" style="padding: 15px 40px; font-size: 16px;">Toggle LED</div>
+          </div>
+        </div>
+
+        <!-- Value Display Widget -->
+        <div class="box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div class="box-header">Air Quality</div>
+            <div style="font-size: 12px; color: #666;">[⋮]</div>
+          </div>
+          <div style="padding: 40px; text-align: center;">
+            <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">Good</div>
+            <div style="color: #666;">Last updated: 2 min ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget-placeholder">
+        + Click to add new widget
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 5: Feed Management -->
+  <div class="wireframe-grid">
+    <div class="wireframe">
+      <div class="wireframe-title">5. Feed Management</div>
+      <div class="nav">
+        <div style="font-weight: bold;">IoT Bootcamp</div>
+        <div class="nav-links">
+          <div>Dashboard</div>
+          <div>Projects</div>
+          <div>Feeds</div>
+          <div>Devices</div>
+          <div>Settings</div>
+          <div>[User Photo]</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2>My Feeds</h2>
+        <div class="button">+ Create New Feed</div>
+      </div>
+
+      <div class="box" style="margin-bottom: 15px;">
+        <input type="text" class="input-field" placeholder="Search feeds..." />
+      </div>
+
+      <table class="table">
+        <tr>
+          <th>Feed Name</th>
+          <th>MQTT Topic</th>
+          <th>Project</th>
+          <th>Current Value</th>
+          <th>Last Update</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>bootcamp/alice/photon2/temperature</td>
+          <td>Home Monitor</td>
+          <td>72.5°F</td>
+          <td>2 min ago</td>
+          <td>
+            <span class="button" style="padding: 4px 8px;">View</span>
+            <span class="button" style="padding: 4px 8px;">Edit</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>bootcamp/alice/photon2/humidity</td>
+          <td>Home Monitor</td>
+          <td>45%</td>
+          <td>2 min ago</td>
+          <td>
+            <span class="button" style="padding: 4px 8px;">View</span>
+            <span class="button" style="padding: 4px 8px;">Edit</span>
+          </td>
+        </tr>
+        <tr>
+          <td>LED Status</td>
+          <td>bootcamp/alice/photon2/led/state</td>
+          <td>Home Monitor</td>
+          <td>ON</td>
+          <td>5 min ago</td>
+          <td>
+            <span class="button" style="padding: 4px 8px;">View</span>
+            <span class="button" style="padding: 4px 8px;">Edit</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Soil Moisture</td>
+          <td>bootcamp/alice/photon2/soil</td>
+          <td>Smart Garden</td>
+          <td>32%</td>
+          <td>1 hour ago</td>
+          <td>
+            <span class="button" style="padding: 4px 8px;">View</span>
+            <span class="button" style="padding: 4px 8px;">Edit</span>
+          </td>
+        </tr>
+      </table>
+
+      <div class="box" style="margin-top: 20px;">
+        <div class="box-header">Create/Edit Feed Form</div>
+        <div style="padding: 10px;">
+          <label style="display: block; margin-bottom: 5px; font-weight: bold;">Feed Name:</label>
+          <input type="text" class="input-field" placeholder="e.g., Living Room Temperature" />
+
+          <label style="display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold;">MQTT Topic:</label>
+          <input type="text" class="input-field" placeholder="bootcamp/alice/photon2/temperature" />
+
+          <label style="display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold;">Project:</label>
+          <select class="input-field">
+            <option>Select a project...</option>
+            <option>Home Monitor</option>
+            <option>Weather Station</option>
+            <option>Smart Garden</option>
+          </select>
+
+          <label style="display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold;">Data Type:</label>
+          <select class="input-field">
+            <option>Number</option>
+            <option>Text</option>
+            <option>Boolean</option>
+          </select>
+
+          <label style="display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold;">Unit (optional):</label>
+          <input type="text" class="input-field" placeholder="e.g., °F, %, ppm" />
+
+          <label style="display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold;">Data Retention (days):</label>
+          <input type="number" class="input-field" placeholder="90" />
+
+          <div style="margin-top: 20px;">
+            <span class="button">Save Feed</span>
+            <span class="button">Cancel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 6: Device Setup -->
+    <div class="wireframe">
+      <div class="wireframe-title">6. Device Setup & MQTT Credentials</div>
+      <div class="nav">
+        <div style="font-weight: bold;">IoT Bootcamp</div>
+        <div class="nav-links">
+          <div>Dashboard</div>
+          <div>Projects</div>
+          <div>Feeds</div>
+          <div>Devices</div>
+          <div>Settings</div>
+          <div>[User Photo]</div>
+        </div>
+      </div>
+
+      <h2 style="margin-bottom: 20px;">Device Setup</h2>
+
+      <div class="box" style="background: #fff9e6; border-color: #f59e0b; margin-bottom: 20px;">
+        <div class="box-header" style="color: #f59e0b;">⚠️ Important: Save These Credentials</div>
+        <p style="margin-top: 10px;">You'll need these credentials to configure your Particle Photon2. Keep them secure!</p>
+      </div>
+
+      <div class="box" style="margin-bottom: 20px;">
+        <div class="box-header">Your MQTT Credentials</div>
+        <table style="width: 100%; margin-top: 10px;">
+          <tr>
+            <td style="padding: 10px; font-weight: bold; width: 200px;">MQTT Broker:</td>
+            <td style="padding: 10px;">
+              <code style="background: #f0f0f0; padding: 5px 10px;">mqtt.yourbootcamp.com</code>
+              <span class="button" style="padding: 4px 10px; margin-left: 10px;">Copy</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; font-weight: bold;">Port:</td>
+            <td style="padding: 10px;">
+              <code style="background: #f0f0f0; padding: 5px 10px;">8883</code>
+              <span class="button" style="padding: 4px 10px; margin-left: 10px;">Copy</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; font-weight: bold;">Username:</td>
+            <td style="padding: 10px;">
+              <code style="background: #f0f0f0; padding: 5px 10px;">alice@school.edu</code>
+              <span class="button" style="padding: 4px 10px; margin-left: 10px;">Copy</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; font-weight: bold;">Password:</td>
+            <td style="padding: 10px;">
+              <code style="background: #f0f0f0; padding: 5px 10px;">x7Kp9mNq2vL4wR8t</code>
+              <span class="button" style="padding: 4px 10px; margin-left: 10px;">Copy</span>
+              <span class="button" style="padding: 4px 10px; margin-left: 10px;">Show/Hide</span>
+            </td>
+          </tr>
+        </table>
+        <div style="margin-top: 15px;">
+          <span class="button">Regenerate Password</span>
+          <span class="button">Download as .txt</span>
+        </div>
+      </div>
+
+      <div class="box" style="margin-bottom: 20px;">
+        <div class="box-header">Connected Devices</div>
+        <table class="table">
+          <tr>
+            <th>Device ID</th>
+            <th>Status</th>
+            <th>Last Seen</th>
+            <th>Messages Today</th>
+          </tr>
+          <tr>
+            <td>photon2-alice-001</td>
+            <td><span class="status-indicator status-online"></span>Online</td>
+            <td>Just now</td>
+            <td>1,247</td>
+          </tr>
+          <tr>
+            <td>photon2-alice-002</td>
+            <td><span class="status-indicator status-offline"></span>Offline</td>
+            <td>2 hours ago</td>
+            <td>523</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="box">
+        <div class="box-header">Setup Instructions for Particle Photon2</div>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li>Open Particle Workbench or Web IDE</li>
+          <li>Create a new project or open existing code</li>
+          <li>Copy your MQTT credentials from above</li>
+          <li>Add the following code to your setup():
+            <pre style="background: #f5f5f5; padding: 10px; margin: 10px 0; border: 1px solid #ddd;">
+MQTT client("mqtt.yourbootcamp.com", 8883, callback);
+client.connect("photon2-alice", "alice@school.edu", "password");
+                            </pre>
+          </li>
+          <li>Flash the code to your Photon2</li>
+          <li>Check the "Connected Devices" section to verify connection</li>
+        </ol>
+        <div style="margin-top: 15px;">
+          <span class="button">Download Sample Code</span>
+          <span class="button">View Full Documentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

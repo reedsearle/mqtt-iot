@@ -1,0 +1,124 @@
+<svg viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="600" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1e293b">
+    IoT Bootcamp Platform Architecture
+  </text>
+  <text x="600" y="70" font-size="16" text-anchor="middle" fill="#64748b">
+    Eclipse Mosquitto MQTT Broker System
+  </text>
+
+  <rect x="50" y="100" width="1100" height="280" fill="#dbeafe" stroke="#3b82f6" stroke-width="3" rx="10"/>
+  <text x="70" y="135" font-size="20" font-weight="bold" fill="#1e40af">Student Layer (~20 Users)</text>
+
+  <rect x="80" y="160" width="500" height="200" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="100" y="190" font-size="18" font-weight="bold" fill="#1e40af">Web Dashboard</text>
+  <text x="100" y="220" font-size="14" fill="#334155">Tech Stack:</text>
+  <text x="100" y="245" font-size="13" fill="#334155">- React + TypeScript</text>
+  <text x="100" y="265" font-size="13" fill="#334155">- Tailwind CSS + Flowbite</text>
+  <text x="100" y="285" font-size="13" fill="#334155">- WebSocket for real-time</text>
+  <text x="100" y="315" font-size="14" font-weight="bold" fill="#334155">Authentication:</text>
+  <text x="100" y="340" font-size="13" fill="#059669">Google OAuth2/OpenID</text>
+
+  <rect x="620" y="160" width="500" height="200" fill="#faf5ff" stroke="#9333ea" stroke-width="2" rx="8"/>
+  <text x="640" y="190" font-size="18" font-weight="bold" fill="#6b21a8">Particle Photon2</text>
+  <text x="640" y="220" font-size="14" fill="#334155">Language:</text>
+  <text x="640" y="245" font-size="13" fill="#334155">- C++ Programming</text>
+  <text x="640" y="275" font-size="14" fill="#334155">MQTT Client:</text>
+  <text x="640" y="300" font-size="13" fill="#334155">- Built-in Particle MQTT library</text>
+  <text x="640" y="330" font-size="14" font-weight="bold" fill="#334155">Authentication:</text>
+  <text x="640" y="355" font-size="13" fill="#ea580c">Username/Password + TLS</text>
+
+  <path d="M 600 390 L 600 440" stroke="#94a3b8" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+
+  <rect x="50" y="450" width="1100" height="200" fill="#d1fae5" stroke="#10b981" stroke-width="3" rx="10"/>
+  <text x="70" y="485" font-size="20" font-weight="bold" fill="#065f46">Backend Application Layer</text>
+
+  <rect x="80" y="510" width="1040" height="120" fill="#ecfdf5" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="100" y="540" font-size="18" font-weight="bold" fill="#065f46">Backend API (TBD)</text>
+  <text x="100" y="570" font-size="14" fill="#334155">Responsibilities:</text>
+  <text x="100" y="595" font-size="12" fill="#334155">- Handle OAuth2 authentication - Generate MQTT credentials - Subscribe to MQTT topics</text>
+  <text x="100" y="615" font-size="12" fill="#334155">- Save sensor data to TimescaleDB - Serve REST API - WebSocket server for real-time</text>
+
+  <path d="M 600 660 L 600 710" stroke="#94a3b8" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+
+  <rect x="50" y="720" width="1100" height="380" fill="#fed7aa" stroke="#f97316" stroke-width="3" rx="10"/>
+  <text x="70" y="755" font-size="20" font-weight="bold" fill="#9a3412">Infrastructure Layer (Docker)</text>
+
+  <rect x="80" y="780" width="500" height="300" fill="#ffedd5" stroke="#f97316" stroke-width="2" rx="8"/>
+  <text x="100" y="810" font-size="18" font-weight="bold" fill="#9a3412">Eclipse Mosquitto</text>
+  <text x="100" y="835" font-size="14" fill="#334155">MQTT Broker:</text>
+  <text x="100" y="855" font-size="12" fill="#334155">- Version 2.0.18</text>
+  <text x="100" y="875" font-size="12" fill="#334155">- Port 8883 (MQTT over TLS)</text>
+  <text x="100" y="895" font-size="12" fill="#334155">- Port 9001 (WebSocket)</text>
+  <text x="100" y="920" font-size="14" font-weight="bold" fill="#334155">Security:</text>
+  <text x="100" y="940" font-size="12" fill="#334155">- Username/Password auth</text>
+  <text x="100" y="960" font-size="12" fill="#334155">- TLS encryption</text>
+  <text x="100" y="980" font-size="12" fill="#334155">- ACL (Access Control Lists)</text>
+  <text x="100" y="1005" font-size="14" font-weight="bold" fill="#334155">Capacity:</text>
+  <text x="100" y="1025" font-size="12" fill="#334155">- Max: 1,000 msg/sec (throttled)</text>
+  <text x="100" y="1045" font-size="12" fill="#334155">- Typical: ~100 msg/sec</text>
+  <text x="100" y="1070" font-size="12" fill="#334155">Storage: Retained messages only</text>
+
+  <rect x="620" y="780" width="500" height="300" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="8"/>
+  <text x="640" y="810" font-size="18" font-weight="bold" fill="#3730a3">PostgreSQL + TimescaleDB</text>
+  <text x="640" y="835" font-size="14" fill="#334155">Single Database System:</text>
+
+  <rect x="650" y="850" width="440" height="90" fill="#c7d2fe" stroke="#6366f1" stroke-width="1" rx="5"/>
+  <text x="660" y="870" font-size="13" font-weight="bold" fill="#3730a3">Regular Tables:</text>
+  <text x="660" y="890" font-size="11" fill="#334155">- users (OAuth2) - mqtt_credentials - projects</text>
+  <text x="660" y="910" font-size="11" fill="#334155">- feeds (topics) - dashboards - widgets</text>
+
+  <rect x="650" y="950" width="440" height="110" fill="#c7d2fe" stroke="#6366f1" stroke-width="1" rx="5"/>
+  <text x="660" y="970" font-size="13" font-weight="bold" fill="#3730a3">Hypertables (TimescaleDB):</text>
+  <text x="660" y="990" font-size="11" fill="#334155">- sensor_data (time-series)</text>
+  <text x="660" y="1010" font-size="11" fill="#334155">- Automatic partitioning</text>
+  <text x="660" y="1030" font-size="11" fill="#334155">- Retention policies</text>
+  <text x="660" y="1050" font-size="11" fill="#334155">- Compression</text>
+
+  <rect x="50" y="1120" width="1100" height="220" fill="#334155" stroke="#1e293b" stroke-width="3" rx="10"/>
+  <text x="70" y="1155" font-size="20" font-weight="bold" fill="#f1f5f9">Data Flow Example</text>
+
+  <circle cx="100" cy="1185" r="18" fill="#a855f7"/>
+  <text x="100" y="1192" font-size="16" font-weight="bold" fill="white" text-anchor="middle">1</text>
+  <text x="130" y="1192" font-size="13" fill="#f1f5f9">Photon2 publishes: bootcamp/alice/photon2/temperature - 72.5</text>
+
+  <circle cx="100" cy="1220" r="18" fill="#f97316"/>
+  <text x="100" y="1227" font-size="16" font-weight="bold" fill="white" text-anchor="middle">2</text>
+  <text x="130" y="1227" font-size="13" fill="#f1f5f9">Mosquitto routes message to all subscribers</text>
+
+  <circle cx="100" cy="1255" r="18" fill="#10b981"/>
+  <text x="100" y="1262" font-size="16" font-weight="bold" fill="white" text-anchor="middle">3</text>
+  <text x="130" y="1262" font-size="13" fill="#f1f5f9">Backend receives message via MQTT subscription</text>
+
+  <circle cx="100" cy="1290" r="18" fill="#6366f1"/>
+  <text x="100" y="1297" font-size="16" font-weight="bold" fill="white" text-anchor="middle">4</text>
+  <text x="130" y="1297" font-size="13" fill="#f1f5f9">Backend saves to TimescaleDB: INSERT INTO sensor_data</text>
+
+  <circle cx="640" cy="1185" r="18" fill="#3b82f6"/>
+  <text x="640" y="1192" font-size="16" font-weight="bold" fill="white" text-anchor="middle">5</text>
+  <text x="670" y="1192" font-size="13" fill="#f1f5f9">Backend pushes update to dashboard via WebSocket</text>
+
+  <circle cx="640" cy="1220" r="18" fill="#3b82f6"/>
+  <text x="640" y="1227" font-size="16" font-weight="bold" fill="white" text-anchor="middle">6</text>
+  <text x="670" y="1227" font-size="13" fill="#f1f5f9">Dashboard updates chart in real-time</text>
+
+  <rect x="50" y="1360" width="1100" height="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="10"/>
+  <text x="70" y="1395" font-size="20" font-weight="bold" fill="#78350f">MQTT Topic Structure</text>
+
+  <text x="100" y="1425" font-size="14" font-weight="bold" fill="#78350f">Pattern:</text>
+  <rect x="100" y="1435" width="1000" height="30" fill="white" stroke="#f59e0b" stroke-width="1" rx="5"/>
+  <text x="110" y="1457" font-size="13" font-family="monospace" fill="#334155">bootcamp/username/device/sensor</text>
+
+  <text x="100" y="1490" font-size="14" font-weight="bold" fill="#78350f">Examples:</text>
+  <text x="110" y="1512" font-size="12" font-family="monospace" fill="#334155">bootcamp/alice/photon2/temperature</text>
+  <text x="110" y="1530" font-size="12" font-family="monospace" fill="#334155">bootcamp/alice/photon2/led/command</text>
+
+  <text x="600" y="1580" font-size="12" text-anchor="middle" fill="#64748b">
+    Educational IoT Platform - 15 Students + 5 Graduates - 50 msg/sec throttle per user
+  </text>
+</svg>

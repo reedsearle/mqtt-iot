@@ -1,0 +1,280 @@
+import React from 'react';
+import { Database, Shield, Server, Wifi, Lock, User, Cloud, Terminal } from 'lucide-react';
+
+export default function ArchitectureDiagram() {
+return (
+<div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 p-8 overflow-auto">
+  <div className="max-w-7xl mx-auto">
+    <h1 className="text-3xl font-bold text-slate-800 mb-2 text-center">
+      IoT Bootcamp Platform Architecture
+    </h1>
+    <p className="text-slate-600 text-center mb-8">Eclipse Mosquitto MQTT Broker System</p>
+
+    <div className="space-y-8">
+
+      {/* Student Layer */}
+      <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-blue-200">
+        <div className="flex items-center gap-2 mb-4">
+          <User className="text-blue-600" size={24} />
+          <h2 className="text-xl font-bold text-slate-800">Student Layer (~20 Users)</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* Web Dashboard */}
+          <div className="bg-blue-50 rounded-lg p-4 border-2 border-blue-300">
+            <div className="flex items-center gap-2 mb-2">
+              <Cloud className="text-blue-600" size={20} />
+              <h3 className="font-semibold text-blue-900">Web Dashboard</h3>
+            </div>
+            <div className="text-sm text-slate-700 space-y-1">
+              <div className="font-medium">Tech Stack:</div>
+              <div>• React + TypeScript</div>
+              <div>• Tailwind CSS + Flowbite</div>
+              <div>• WebSocket for real-time</div>
+              <div className="mt-2 font-medium">Authentication:</div>
+              <div className="flex items-center gap-1">
+                <Shield size={14} className="text-green-600" />
+                <span>Google OAuth2/OpenID</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Particle Photon2 */}
+          <div className="bg-purple-50 rounded-lg p-4 border-2 border-purple-300">
+            <div className="flex items-center gap-2 mb-2">
+              <Wifi className="text-purple-600" size={20} />
+              <h3 className="font-semibold text-purple-900">Particle Photon2</h3>
+            </div>
+            <div className="text-sm text-slate-700 space-y-1">
+              <div className="font-medium">Language:</div>
+              <div>• C++ Programming</div>
+              <div className="mt-2 font-medium">MQTT Client:</div>
+              <div>• Built-in Particle MQTT library</div>
+              <div className="mt-2 font-medium">Authentication:</div>
+              <div className="flex items-center gap-1">
+                <Lock size={14} className="text-orange-600" />
+                <span>Username/Password + TLS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Arrow */}
+      <div className="flex justify-center">
+        <div className="text-4xl text-slate-400">↓</div>
+      </div>
+
+      {/* Backend Layer */}
+      <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-green-200">
+        <div className="flex items-center gap-2 mb-4">
+          <Server className="text-green-600" size={24} />
+          <h2 className="text-xl font-bold text-slate-800">Backend Application Layer</h2>
+        </div>
+
+        <div className="bg-green-50 rounded-lg p-4 border-2 border-green-300">
+          <div className="flex items-center gap-2 mb-2">
+            <Terminal className="text-green-600" size={20} />
+            <h3 className="font-semibold text-green-900">Backend API (TBD)</h3>
+          </div>
+          <div className="text-sm text-slate-700 space-y-1">
+            <div className="font-medium">Responsibilities:</div>
+            <div>• Handle OAuth2 authentication</div>
+            <div>• Generate MQTT credentials for students</div>
+            <div>• Subscribe to MQTT topics</div>
+            <div>• Save sensor data to TimescaleDB</div>
+            <div>• Serve REST API for dashboard</div>
+            <div>• WebSocket server for real-time updates</div>
+            <div className="mt-2 font-medium">Candidate Technologies:</div>
+            <div>• Java/Spring Boot (your expertise)</div>
+            <div>• Node.js/Express</div>
+            <div>• Python/FastAPI</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Arrow */}
+      <div className="flex justify-center">
+        <div className="text-4xl text-slate-400">↓</div>
+      </div>
+
+      {/* Infrastructure Layer */}
+      <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-orange-200">
+        <div className="flex items-center gap-2 mb-4">
+          <Server className="text-orange-600" size={24} />
+          <h2 className="text-xl font-bold text-slate-800">Infrastructure Layer (Docker)</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* Mosquitto Broker */}
+          <div className="bg-orange-50 rounded-lg p-4 border-2 border-orange-300">
+            <div className="flex items-center gap-2 mb-2">
+              <Wifi className="text-orange-600" size={20} />
+              <h3 className="font-semibold text-orange-900">Eclipse Mosquitto</h3>
+            </div>
+            <div className="text-sm text-slate-700 space-y-1">
+              <div className="font-medium">MQTT Broker:</div>
+              <div>• Version 2.0.18</div>
+              <div>• Port 8883 (MQTT over TLS)</div>
+              <div>• Port 9001 (WebSocket)</div>
+              <div className="mt-2 font-medium">Security:</div>
+              <div>• Username/Password auth</div>
+              <div>• TLS encryption</div>
+              <div>• ACL (Access Control Lists)</div>
+              <div className="mt-2 font-medium">Capacity:</div>
+              <div>• Max: 1,000 msg/sec (throttled)</div>
+              <div>• Typical: ~100 msg/sec</div>
+              <div className="mt-2 font-medium">Storage:</div>
+              <div>• Retained messages only</div>
+              <div>• Session persistence</div>
+            </div>
+          </div>
+
+          {/* Database */}
+          <div className="bg-indigo-50 rounded-lg p-4 border-2 border-indigo-300">
+            <div className="flex items-center gap-2 mb-2">
+              <Database className="text-indigo-600" size={20} />
+              <h3 className="font-semibold text-indigo-900">PostgreSQL + TimescaleDB</h3>
+            </div>
+            <div className="text-sm text-slate-700 space-y-1">
+              <div className="font-medium">Single Database System:</div>
+              <div className="mt-2 bg-indigo-100 p-2 rounded">
+                <div className="font-semibold text-indigo-900">Regular Tables:</div>
+                <div>• users (OAuth2 data)</div>
+                <div>• mqtt_credentials</div>
+                <div>• projects</div>
+                <div>• feeds (topic definitions)</div>
+                <div>• dashboards</div>
+                <div>• widgets</div>
+              </div>
+              <div className="mt-2 bg-indigo-100 p-2 rounded">
+                <div className="font-semibold text-indigo-900">Hypertables (TimescaleDB):</div>
+                <div>• sensor_data (time-series)</div>
+                <div>• Automatic partitioning</div>
+                <div>• Retention policies</div>
+                <div>• Compression</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Data Flow Section */}
+      <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-lg shadow-lg p-6 text-white">
+        <h2 className="text-xl font-bold mb-4">Data Flow Example</h2>
+        <div className="space-y-3 text-sm">
+          <div className="flex items-center gap-2">
+            <div className="bg-purple-500 rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+            <div>Photon2 publishes: <code className="bg-slate-900 px-2 py-1 rounded">bootcamp/alice/photon2/temperature → "72.5"</code></div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
+            <div>Mosquitto routes message to all subscribers</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-green-500 rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
+            <div>Backend receives message via MQTT subscription</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-indigo-500 rounded-full w-8 h-8 flex items-center justify-center font-bold">4</div>
+            <div>Backend saves to TimescaleDB: <code className="bg-slate-900 px-2 py-1 rounded">INSERT INTO sensor_data ...</code></div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center font-bold">5</div>
+            <div>Backend pushes update to dashboard via WebSocket</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center font-bold">6</div>
+            <div>Dashboard updates chart in real-time</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Topic Structure */}
+      <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-yellow-200">
+        <h2 className="text-xl font-bold text-slate-800 mb-4">MQTT Topic Structure</h2>
+        <div className="bg-yellow-50 rounded-lg p-4 border-2 border-yellow-300">
+          <div className="font-mono text-sm space-y-2">
+            <div className="font-bold text-yellow-900">Pattern:</div>
+            <div className="bg-white p-2 rounded border">bootcamp/<span className="text-blue-600">{'{username}'}</span>/<span className="text-purple-600">{'{device}'}</span>/<span className="text-green-600">{'{sensor}'}</span></div>
+
+            <div className="mt-4 font-bold text-yellow-900">Examples:</div>
+            <div className="space-y-1">
+              <div className="bg-white p-2 rounded border">bootcamp/alice/photon2/temperature</div>
+              <div className="bg-white p-2 rounded border">bootcamp/alice/photon2/humidity</div>
+              <div className="bg-white p-2 rounded border">bootcamp/alice/photon2/led/command</div>
+              <div className="bg-white p-2 rounded border">bootcamp/bob/photon2/temperature</div>
+            </div>
+
+            <div className="mt-4 font-bold text-yellow-900">ACL Rules:</div>
+            <div className="bg-white p-2 rounded border">
+              <div>user alice</div>
+              <div className="text-green-600">topic readwrite bootcamp/alice/#</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Key Decisions */}
+      <div className="bg-gradient-to-r from-green-600 to-emerald-700 rounded-lg shadow-lg p-6 text-white">
+        <h2 className="text-xl font-bold mb-4">✅ Key Architectural Decisions</h2>
+        <div className="grid md:grid-cols-2 gap-4 text-sm">
+          <div className="space-y-2">
+            <div className="flex items-start gap-2">
+              <div className="text-2xl">🔧</div>
+              <div>
+                <div className="font-semibold">MQTT Broker:</div>
+                <div>Eclipse Mosquitto - simple, proven, lightweight</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="text-2xl">💾</div>
+              <div>
+                <div className="font-semibold">Database:</div>
+                <div>PostgreSQL + TimescaleDB (single system)</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="text-2xl">🔒</div>
+              <div>
+                <div className="font-semibold">Web Auth:</div>
+                <div>Google OAuth2 (leverage your Java skills)</div>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-start gap-2">
+              <div className="text-2xl">🔐</div>
+              <div>
+                <div className="font-semibold">MQTT Auth:</div>
+                <div>Username/Password + TLS (no API keys)</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="text-2xl">🐳</div>
+              <div>
+                <div className="font-semibold">Deployment:</div>
+                <div>Docker containers - isolated & portable</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="text-2xl">📊</div>
+              <div>
+                <div className="font-semibold">Scale:</div>
+                <div>Single broker handles 20 users easily</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Footer */}
+    <div className="mt-8 text-center text-slate-500 text-sm">
+      <p>Educational IoT Platform • 15 Students + 5 Graduates • 50 msg/sec throttle per user</p>
+    </div>
+  </div>
+</div>
+);
+}

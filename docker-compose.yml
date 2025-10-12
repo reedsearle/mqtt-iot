@@ -1,0 +1,77 @@
+version: '3.8'
+
+  services:
+    # PostgreSQL Database
+    postgres:
+      image: timescale/timescaledb:latest-pg15
+      container_name: iot-postgres
+      environment:
+        POSTGRES_DB: iot_bootcamp
+        POSTGRES_USER: iot_user
+        POSTGRES_PASSWORD: iot_password
+      ports:
+        - "5432:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+        - ./postgres/init:/docker-entrypoint-initdb.d
+      networks:
+        - iot-network
+      restart: unless-stopped
+
+    # Eclipse Mosquitto MQTT Broker
+    mosquitto:
+      image: eclipse-mosquitto:2.0.18
+      container_name: iot-mosquitto
+      ports:
+        - "1883:1883"      # MQTT (for local dev - no TLS)
+        - "8883:8883"      # MQTT over TLS (for production)
+        - "9001:9001"      # WebSocket
+      volumes:
+        - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+        - ./mosquitto/data:/mosquitto/data
+        - ./mosquitto/log:/mosquitto/log
+        - ./mosquitto/password:/mosquitto/password
+        # For production with TLS:
+        # - ./certs:/mosquitto/certs
+      networks:
+        - iot-network
+      restart: unless-stopped
+
+    # Backend API (to be implemented)
+    # backend:
+    #   build: ./backend
+    #   container_name: iot-backend
+    #   ports:
+    #     - "8080:8080"
+    #   environment:
+    #     DATABASE_URL: postgres://iot_user:iot_password@postgres:5432/iot_bootcamp
+    #     MQTT_BROKER: mosquitto
+    #     MQTT_PORT: 1883
+    #   depends_on:
+    #     - postgres
+    #     - mosquitto
+    #   networks:
+    #     - iot-network
+    #   restart: unless-stopped
+
+    # Frontend (to be implemented)
+    # frontend:
+    #   build: ./frontend
+    #   container_name: iot-frontend
+    #   ports:
+    #     - "3000:3000"
+    #   depends_on:
+    #     - backend
+    #   networks:
+    #     - iot-network
+    #   restart: unless-stopped
+
+  volumes:
+    postgres_data:
+    mosquitto_data:
+    mosquitto_log:
+
+  networks:
+    iot-network:
+      driver: bridge
+

@@ -1,0 +1,86 @@
+  -- Enable TimescaleDB extension
+  CREATE EXTENSION IF NOT EXISTS timescaledb;
+
+  -- Users table (OAuth2 data)
+  CREATE TABLE users (
+      id SERIAL PRIMARY KEY,
+      google_id VARCHAR(255) UNIQUE,
+      email VARCHAR(255) UNIQUE NOT NULL,
+      name VARCHAR(255),
+      created_at TIMESTAMPTZ DEFAULT NOW()
+  );
+
+  -- MQTT credentials for each user
+  CREATE TABLE mqtt_credentials (
+      id SERIAL PRIMARY KEY,
+      user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+      mqtt_username VARCHAR(255) UNIQUE NOT NULL,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+  );
+
+  -- Projects
+  CREATE TABLE projects (
+      id SERIAL PRIMARY KEY,
+      user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+      name VARCHAR(255) NOT NULL,
+      description TEXT,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+  );
+
+  -- Feeds (topic definitions)
+  CREATE TABLE feeds (
+      id SERIAL PRIMARY KEY,
+      project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
+      name VARCHAR(255) NOT NULL,
+      topic VARCHAR(500) NOT NULL,
+      data_type VARCHAR(50),
+      created_at TIMESTAMPTZ DEFAULT NOW()
+  );
+
+  -- MVP Demo tables
+  CREATE TABLE etch_sketch_data (
+      id SERIAL PRIMARY KEY,
+      user_id INTEGER REFERENCES users(id),
+      x_position INTEGER,
+      y_position INTEGER,
+      timestamp TIMESTAMPTZ DEFAULT NOW()
+  );
+
+  CREATE TABLE device_status (
+      id SERIAL PRIMARY KEY,
+      user_id INTEGER REFERENCES users(id),
+      led_state BOOLEAN,
+      encoder1_rpm FLOAT,
+      current_value INTEGER,
+      updated_at TIMESTAMPTZ DEFAULT NOW()
+  );
+
+  -- Time-series sensor data (TimescaleDB hypertable)
+  CREATE TABLE sensor_data (
+      time TIMESTAMPTZ NOT NULL,
+      user_id INTEGER REFERENCES users(id),
+      feed_id INTEGER REFERENCES feeds(id),
+      topic VARCHAR(500),
+      value TEXT,
+      value_numeric DOUBLE PRECISION,
+      metadata JSONB
+  );
+
+  -- Convert to hypertable
+  SELECT create_hypertable('sensor_data', 'time');
+
+  -- Create indexes
+  CREATE INDEX idx_sensor_data_user_id ON sensor_data(user_id, time DESC);
+  CREATE INDEX idx_sensor_data_feed_id ON sensor_data(feed_id, time DESC);
+  CREATE INDEX idx_sensor_data_topic ON sensor_data(topic, time DESC);
+
+  -- Retention policy (optional - keep data for 90 days)
+  SELECT add_retention_policy('sensor_data', INTERVAL '90 days');
+
+  -- Compression policy (optional - compress data older than 7 days)
+  ALTER TABLE sensor_data SET (
+      timescaledb.compress,
+      timescaledb.compress_segmentby = 'user_id, feed_id'
+  );
+  SELECT add_compression_policy('sensor_data', INTERVAL '7 days');
+

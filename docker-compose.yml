@@ -55,9 +55,9 @@ version: '3.8'
     #   restart: unless-stopped
 
     # Frontend (to be implemented)
-    # frontend:
-    #   build: ./frontend
-    #   container_name: iot-frontend
+    # frontendOld:
+    #   build: ./frontendOld
+    #   container_name: iot-frontendOld
     #   ports:
     #     - "3000:3000"
     #   depends_on:
